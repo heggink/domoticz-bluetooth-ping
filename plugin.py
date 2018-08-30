@@ -5,7 +5,7 @@
 # BTH address in de format xx:xx:xx:xx:xx:xx
 
 """
-<plugin key="her_bthpresence" name="BTH address presence" author="Herman" version="1.0.0" externallink="https://github.com/Xorfor/Domoticz-Mac-Presence-Plugin">
+<plugin key="bthpresence" name="BTH address presence" author="heggink" version="0.0.1" externallink="https://github.com/heggink/domoticz-bluetooth-ping">
     <params>
         <param field="Address" label="BTH address" width="1000px" required="true"/>
         <param field="Mode1" label="Minutes between check" width="100px" required="true" default="1"/>
