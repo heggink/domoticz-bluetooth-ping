@@ -1,6 +1,7 @@
 # domoticz-bluetooth-ping
 Bluetooth device ping (l2ping) python plugin for Domoticz
 Plugin is based on Xorfor's MAC presence
+## ONLY TESTED FOR Rapberry Pi
 
 This Domoticz Python Plugin scans bluetooth for the existance of the specified bluetooth mac addresses.
 ## Prerequisites
