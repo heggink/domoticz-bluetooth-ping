@@ -8,6 +8,12 @@ This Domoticz Python Plugin scans bluetooth for the existance of the specified b
 You need the latest beta version of Domoticz for the best support of Python plugins and `l2ping` to use this plagin. This tool can be installed by:
 ```bash
 sudo apt-get install -y bluez
+cd ~/domoticz/plugins
+git clone https://github.com/heggink/domoticz-bluetooth-ping
+# downloads the plugin into your plugins folder
+# restart domoticz:
+sudo service domoticz.sh restart
+# from the domoticz interface: hardware -> add new hardware -> Bluetooth address presence
 ```
 ## Parameters
 | Parameter | Description |
