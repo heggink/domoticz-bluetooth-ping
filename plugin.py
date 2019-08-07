@@ -3,9 +3,10 @@
 # Author: Herman
 #
 # BTH address in de format xx:xx:xx:xx:xx:xx
+# changed to bluetooth library. much more responsive
 
 """
-<plugin key="bthpresence" name="Bluetooth address presence" author="heggink" version="0.0.1" externallink="https://github.com/heggink/domoticz-bluetooth-ping">
+<plugin key="bthpresence" name="Bluetooth address presence" author="heggink" version="0.0.2" externallink="https://github.com/heggink/domoticz-bluetooth-ping">
     <params>
         <param field="Address" label="BTH address" width="1000px" required="true"/>
         <param field="Mode1" label="Minutes between check" width="100px" required="true" default="1"/>
@@ -22,7 +23,7 @@
 import Domoticz
 import platform
 import os
-
+import bluetooth
 
 class BasePlugin:
 
@@ -111,11 +112,13 @@ class BasePlugin:
         if self.__runAgain <= 0:
             found = False
             # Scan for mac addresses in the network
-            ret = os.popen(self.__COMMAND + " " + self.__OPTIONS + " " + self.__address).read().lower()
-            Domoticz.Debug("address: '" + self.__address + "'")
-            pos = ret.find(self.__address)
-            Domoticz.Debug("pos: "+str(pos))
-            if pos >= 0:
+            ret = bluetooth.lookup_name(self.__address, timeout=2)
+            if (ret != None):
+#            ret = os.popen(self.__COMMAND + " " + self.__OPTIONS + " " + self.__address).read().lower()
+#            Domoticz.Debug("address: '" + self.__address + "'")
+#            pos = ret.find(self.__address)
+#            Domoticz.Debug("pos: "+str(pos))
+#            if pos >= 0:
                 Domoticz.Debug("address: " + self.__address + " found. Timeout: " + str(self.__timeout))
                 found = True
                 self.__timeout = self.__deftimeout 
