@@ -2,12 +2,15 @@
 Bluetooth device ping (l2ping) python plugin for Domoticz
 Plugin is based on Xorfor's MAC presence
 ## ONLY TESTED FOR Raspberry Pi
+## please note the new version requiring 2 additional installations below (python-bluez and pybluez)!!!
 
 This Domoticz Python Plugin scans bluetooth for the existance of the specified bluetooth mac addresses.
 ## Prerequisites
 You need the latest beta version of Domoticz for the best support of Python plugins and `l2ping` to use this plagin. This tool can be installed by:
 ```bash
 sudo apt-get install -y bluez
+sudo pip3 install pybluez
+sudo apt-get install -y python-bluez
 cd ~/domoticz/plugins
 git clone https://github.com/heggink/domoticz-bluetooth-ping
 # downloads the plugin into your plugins folder
